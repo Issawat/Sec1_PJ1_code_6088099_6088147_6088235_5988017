@@ -1,6 +1,6 @@
 .fillHeader
 {
-    background: rgba(36, 21, 1, 0.76);
+    background: rgba(36, 21, 1, 0.671);
     padding-bottom: 1%;
     z-index: 1;
    
@@ -89,4 +89,14 @@ header{
 @keyframes fadeOut {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+.bg-opacity{
+    background-color: rgb(59, 32, 0);
+    height: 50px;
+    font-size: 10pt;
+}
+.nav-item{
+    margin-left: 15px;
+    margin-right: 15px;
 }
