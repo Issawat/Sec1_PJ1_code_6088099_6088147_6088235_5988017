@@ -1,0 +1,92 @@
+.fillHeader
+{
+    background: rgba(36, 21, 1, 0.76);
+    padding-bottom: 1%;
+    z-index: 1;
+   
+}
+.text
+{
+    color: white;
+    text-align: center;
+}
+.fillFooter
+{
+    background: black;
+    padding: 8%;
+}
+.image-alignment
+{
+    padding-left:47%;
+   
+}
+.fillNav
+{
+    background: rgb(99, 78, 57);
+    
+}
+#childtitle
+{
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom: 30%;
+    
+   
+}
+#AboutUs
+{
+    padding-left: 0%;
+   
+}
+#paragraph
+{
+    padding-top: 35%;
+    padding-bottom: 5%;
+    font-size: 200%;
+}
+header{
+    background-image: url('../images/home1.JPG');
+    background-size: 100%;
+    background-position: center;
+}
+
+.fade-effect{
+    background-color: black;
+    -webkit-animation-name: fade; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: fade;
+    animation-duration: 1s;
+}
+.fade-effect-out{
+    background-color: black;
+    -webkit-animation-name: fadeOut; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: fadeOut;
+    animation-duration: 1s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: 0;
+         
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Standard syntax */
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes fadeOut {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
