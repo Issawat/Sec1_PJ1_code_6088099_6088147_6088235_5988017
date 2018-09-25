@@ -5,7 +5,6 @@
     min-height: 100%;
     z-index: -1;
 }
-
 .fixed-opacity{
     position: fixed;
     background-color: black;

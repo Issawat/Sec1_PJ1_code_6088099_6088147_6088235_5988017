@@ -22,7 +22,6 @@
 }
 .bg-image{
     position: fixed;
-    height: 1000px;
     top:-70px;
     z-index: -99;
     width: 100%;

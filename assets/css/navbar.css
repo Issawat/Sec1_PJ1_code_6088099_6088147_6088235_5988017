@@ -3,13 +3,20 @@
     background-size: 100%;
     background-position: center;
 }
+.logo{
+    display: block;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .fillHeader{
     background: rgba(36, 21, 1, 0.671);
     padding-bottom: 1%;
     z-index: 1;
+    margin: 0 auto;
 }
 .image-alignment{
-    padding-left:47%;
+    margin: 0 auto;
 }
 .text{
     color: white;
