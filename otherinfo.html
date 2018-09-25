@@ -2,133 +2,125 @@
 <html lang="en">
 
 <head>
+    <!-- import global components-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ANTHROPOLOGICAL CULTURE MUSEUM | MAHIDOL UNIVERSITY</title>
+    <link rel="stylesheet" href="assets/css/navbar.css" type="text/css">
+    <script src="assets/js/navbar.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,userscalable=no">
+    <!-- import local components-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/css/history.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,
-userscalable=no">
 </head>
 
 <body class="fade-effect">
-    <script>
-        window.onscroll = function () { scroller() };
-        function scroller() {
-          var header = document.getElementById("nav");
-          var homeBtn = document.getElementById("homeBtn");
-          var sticky = header.offsetTop;
-          console.log(header.offsetTop, window.pageYOffset)
-          if (window.pageYOffset > 195) {
-            header.classList.add("sticky");
-            homeBtn.innerText = '- MU RILCA -'
-          } else if (window.pageYOffset <= 195) {
-            header.classList.remove("sticky");
-            homeBtn.innerText = ' - HOME - '
-          }
-        }
-      </script>
-      
-      <body class="fade-effect">
-        <div class="header">
-          <div class="fillHeader">
+    <!-- navbar component-->
+    <div class="header">
+        <div class="fillHeader">
             <div class="image-alignment">
-              <img width="100" height="100" src="assets/images/logo.png">
+                <img width="100" height="100" src="assets/images/logo.png">
             </div>
             <div>
-              <h3 id="text1" class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
-              <P id="text2" class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
+                <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
+                <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
             </div>
-          </div>
         </div>
-      
-      
-        <div id="nav">
-          <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
+    </div>
+    <div id="nav">
+        <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
             <div class="d-md-flex d-block w-100">
-              <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      INFORMATION
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">MUSEUM INFORMATION</a>
-                      <a class="dropdown-item" href="#">ABOUT US</a>
+                <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                HISTORY
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="history.html">HISTORY</a>
+                                <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                                <a class="dropdown-item" href="moreover.html">MOREOVER</a>
+                            </div>
+                        </li>
+                        <a class="nav-item nav-link" href="operation.html">OPERATION</a>
+                        <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
+                        <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                INFORMATION
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                                <a class="dropdown-item" href="about.html">ABOUT US</a>
+                            </div>
+                        </li>
                     </div>
-                  </li>
-                  <a class="nav-item nav-link" href="operation.html">OPERATION</a>
-                  <a id="homeBtn" class="nav-item nav-link active" href="otherinfo.html"> - HOME -</a>
-                  <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      HISTORY
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">HISTORY</a>
-                      <a class="dropdown-item" href="#">GO DEEPER</a>
-                      <a class="dropdown-item" href="#">MOREOVER</a>
-                    </div>
-                  </li>
                 </div>
-              </div>
             </div>
-          </nav>
-        </div>
+        </nav>
+    </div>
+    <!-- end of navbar component-->
+
+
     <img src="assets/operation-img/NSR_8507.jpg" class="bg-img">
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <ion-icon name="business" class="icon-item"></ion-icon><br>
+                <ion-icon name="business" class="icon-item"></ion-icon>
+                <br>
                 <p class="content">
-                    1st Floor <br>
-                    Research Institute for <br>
-                    Languages and Cultures of Asia <br>
-                    Mahidol University, Salaya Campus</p>
+                    1st Floor
+                    <br> Research Institute for
+                    <br> Languages and Cultures of Asia
+                    <br> Mahidol University, Salaya Campus</p>
             </div>
             <div class="col-sm">
-                <ion-icon name="calendar" class="icon-item"></ion-icon> <br>
+                <ion-icon name="calendar" class="icon-item"></ion-icon>
+                <br>
                 <p class="content">
-                    Office Hours<br>
-                    Monday - Friday <br>
-                    8.30 a.m. – 4.30 p.m.</p>
+                    Office Hours
+                    <br> Monday - Friday
+                    <br> 8.30 a.m. – 4.30 p.m.</p>
             </div>
             <div class="col-sm">
-                <ion-icon name="wallet" class="icon-item"></ion-icon><br>
+                <ion-icon name="wallet" class="icon-item"></ion-icon>
+                <br>
                 <p class="content">
-                    Museum Fee<br>
-                    <i>"Free for all"</i> <br>
+                    Museum Fee
+                    <br>
+                    <i>"Free for all"</i>
+                    <br>
             </div>
         </div>
     </div>
     <div class="container">
         <div class="row no-gutters">
             <div class="col-sm">
-                <ion-icon name="call" class="icon-item"></ion-icon><br>
+                <ion-icon name="call" class="icon-item"></ion-icon>
+                <br>
                 <p class="content">
-                    iCulture Group <br>
-                    Tel: 080-688-7675 <br>
-                    0-2800-2308-14 ext. 3405 <br>
-                    Public Relations office <br>
-                    0-2800-2308-14 ext. 3447 <br>
+                    iCulture Group
+                    <br> Tel: 080-688-7675
+                    <br> 0-2800-2308-14 ext. 3405
+                    <br> Public Relations office
+                    <br> 0-2800-2308-14 ext. 3447
+                    <br>
             </div>
             <div class="col-sm">
-                <ion-icon name="mail" class="icon-item"></ion-icon><br>
+                <ion-icon name="mail" class="icon-item"></ion-icon>
+                <br>
                 <p class="content">
-                    E-mail <br>
-                    rilca.mu@gmail.com <br>
-                    iculture408@gmail.com <br>
-                    </p>
+                    E-mail
+                    <br> rilca.mu@gmail.com
+                    <br> iculture408@gmail.com
+                    <br>
+                </p>
             </div>
         </div>
 

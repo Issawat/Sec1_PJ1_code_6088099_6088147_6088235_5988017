@@ -1,0 +1,38 @@
+.header{
+    background-image: url('../images/home1.JPG');
+    background-size: 100%;
+    background-position: center;
+}
+.fillHeader{
+    background: rgba(36, 21, 1, 0.671);
+    padding-bottom: 1%;
+    z-index: 1;
+}
+.image-alignment{
+    padding-left:47%;
+}
+.text{
+    color: white;
+    text-align: center;
+}
+.bg-opacity{
+    background-color: rgb(61, 34, 0);
+    height: 70px;
+    font-size: 12pt;
+}
+.nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .content {
+    padding-top: 50px;
+  }
+  .off-screen{
+      position: fixed;
+      top : -100px;
+  }
