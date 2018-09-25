@@ -2,80 +2,83 @@
 <html lang="en">
 
 <head>
+    <!-- import global components-->
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ANTHROPOLOGICAL CULTURE MUSEUM | MAHIDOL UNIVERSITY</title>
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/navbar.css" type="text/css">
+    <script src="assets/js/navbar.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,userscalable=no">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- import local components-->
+    <script src="assets/js/history.js"></script>
     <link rel="stylesheet" href="assets/css/history.css" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,
-userscalable=no">
 </head>
 
 <body class="fade-effect">
-    <header>
+    <!-- navbar component-->
+    <div class="header">
         <div class="fillHeader">
             <div class="image-alignment">
                 <img width="100" height="100" src="assets/images/logo.png">
             </div>
-            <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
-            <P class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</P>
+            <div>
+                <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
+                <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
+            </div>
         </div>
-    </header>
-
-    <section>
+    </div>
+    <div id="nav" style="z-index: 100">
         <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
             <div class="d-md-flex d-block w-100">
                 <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                INFORMATION
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">MUSEUM INFORMATION</a>
-                                <a class="dropdown-item" href="#">ABOUT US</a>
-                            </div>
-                        </li>
-                        <a class="nav-item nav-link" href="operation.html">OPERATION</a>
-                        <a class="nav-item nav-link home" href="index.html"> - HOME -</a>
-                        <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 HISTORY
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">HISTORY</a>
-                                <a class="dropdown-item" href="#">GO DEEPER</a>
-                                <a class="dropdown-item" href="#">MOREOVER</a>
+                                <a class="dropdown-item" href="history.html">HISTORY</a>
+                                <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                                <a class="dropdown-item" href="moreover.html">MOREOVER</a>
+                            </div>
+                        </li>
+                        <a class="nav-item nav-link" href="operation.html">OPERATION</a>
+                        <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
+                        <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                INFORMATION
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                                <a class="dropdown-item" href="about.html">ABOUT US</a>
                             </div>
                         </li>
                     </div>
                 </div>
             </div>
         </nav>
-        </nav>
-    </section>
-    <div class="page-title">
-        Museum Operation
     </div>
-    <div class="content">The museum exhibits academic progression of the Institution. The museum is also used as practicum arena for
-        all museum people. The museum of Cultural Anthropology is making an interactive conversation with audiences
-        through ethnic
-        traditional villagesscape recreated to represent their mundane life both tangible and intangible culture.
-        Audiences will be able to learn about past, present, and challenged to ask a critical question about the
-        future. Audiences are encouraged to learn via multiple sensory and provided digitalisation of learning
-        to create a new experience rapidly and widely.
+    <!-- end of navbar component-->
+    <div class="content">
+        <div class="page-title">
+            Museum Operation
+        </div>
+        <div class="content">The museum exhibits academic progression of the Institution. The museum is also used as practicum arena for all museum
+            people. The museum of Cultural Anthropology is making an interactive conversation with audiences through ethnic
+            traditional villagesscape recreated to represent their mundane life both tangible and intangible culture. Audiences
+            will be able to learn about past, present, and challenged to ask a critical question about the future. Audiences
+            are encouraged to learn via multiple sensory and provided digitalisation of learning to create a new experience
+            rapidly and widely.
+        </div>
     </div>
 </body>

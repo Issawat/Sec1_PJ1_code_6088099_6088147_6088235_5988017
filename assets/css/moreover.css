@@ -1,0 +1,17 @@
+.fillFooter {
+    background: black;
+    padding: 8%;
+}
+#childtitle {
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom: 30%;
+}
+#AboutUs {
+    padding-left: 0%;
+}
+#paragraph {
+    padding-top: 35%;
+    padding-bottom: 5%;
+    font-size: 200%;
+}

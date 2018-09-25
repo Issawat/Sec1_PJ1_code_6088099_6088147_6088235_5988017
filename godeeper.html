@@ -1,86 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Go deeper</title>
-    <link rel="stylesheet" href ="History.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,
-userscalable=no">
+<head>
+  <!-- import global components-->
+  <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ANTHROPOLOGICAL CULTURE MUSEUM | MAHIDOL UNIVERSITY</title>
+  <link rel="stylesheet" href="assets/css/navbar.css" type="text/css">
+  <script src="assets/js/navbar.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,userscalable=no">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- import local components-->
+  <link rel="stylesheet" href="assets/css/godeeper.css" type="text/css">
 </head>
-<body>
-  <header>
-      <div class="fillHeader">
-    <div class="image-alignment"><img width = "100" height = "100"src ="มหิดล.png"  ></div> 
-     <h3 class ="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
-     <P class ="text">Research Institute for Languages and Cultures of Asia, Mahidol University</P>
-     </div>
-  </header>
-  <section >
-    <nav class="navbar navbar-expand-lg navbar-dark fillNav">
-        <a class="navbar-brand "  href="#" >Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Museum Operation <span class="sr-only">(current)</span></a>
-            </li>
-           
-           
+
+<body class="fade-effect">
+  <!-- navbar component-->
+  <div class="header">
+    <div class="fillHeader">
+      <div class="image-alignment">
+        <img width="100" height="100" src="assets/images/logo.png">
+      </div>
+      <div>
+        <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
+        <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
+      </div>
+    </div>
+  </div>
+  <div id="nav" style="z-index: 100">
+    <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
+      <div class="d-md-flex d-block w-100">
+        <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                History
+                HISTORY
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">History</a>
-                <a class="dropdown-item" href="#">Go Deeper</a>
-                <a class="dropdown-item" href="#">Moreover</a>
+                <a class="dropdown-item" href="history.html">HISTORY</a>
+                <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                <a class="dropdown-item" href="moreover.html">MOREOVER</a>
               </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Museum Information</a>
-              </li>
-             <div  id="AboutUs">
-              <li class="nav-item" >
-                <a class="nav-link"  href="#">About Us</a>
-              </li>
+            <a class="nav-item nav-link" href="operation.html">OPERATION</a>
+            <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
+            <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                INFORMATION
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                <a class="dropdown-item" href="about.html">ABOUT US</a>
               </div>
-          </ul>
+            </li>
+          </div>
         </div>
-      </nav>
-  </section>
-   
-  <section >
-      
-        <h1 id='childtitle' class="text" alt=""style="background-image: url(NSR_8518.jpg); height:20em; width:100%; ">GO DEEPER</h1>
-  </section>
-  <article>
-        <h6 class ="text">Go deeper into the philosophy</h6>
+      </div>
+    </nav>
+  </div>
+  <!-- end of navbar component-->
+  <div class="content">
+    <section>
+      <h1 id='childtitle' class="text" alt="" style="background-image: url(NSR_8518.jpg); height:20em; width:100%; ">GO DEEPER</h1>
+    </section>
+    <article>
+      <h6 class="text">Go deeper into the philosophy</h6>
       <div id="paragraph" class="text" alt="" style="background-image: url(NSR_8518.jpg); height:40em; width:100%;">
-          <p> The philosophy of RILCA is "languages and Cultures are the heart of sustainable development"
-              Therefore, the main task of RILCA is to support research toward diversity of languages and cultures
-              and also promote the positive communication outcomes in Southeast Asia.
-              The research findings of each studies are advantage to many parts of society both nationally and internationally
-              such as eduction and social development.
+        <p> The philosophy of RILCA is "languages and Cultures are the heart of sustainable development" Therefore, the main
+          task of RILCA is to support research toward diversity of languages and cultures and also promote the positive communication
+          outcomes in Southeast Asia. The research findings of each studies are advantage to many parts of society both nationally
+          and internationally such as eduction and social development.
         </p>
       </div>
-  
-  </article>
-  <article>
-        <h6 class ="text">Go deeper into the philosophy</h6>
+
+    </article>
+    <article>
+      <h6 class="text">Go deeper into the philosophy</h6>
       <div id="paragraph" class="text" alt="" style="background-image: url(NSR_8518.jpg); height:40em; width:100%;">
-         
+
       </div>
-  
-  </article>
-  
-  <footer class = "fillFooter">
-           
-  </footer>
+
+    </article>
+
+    <footer class="fillFooter">
+
+    </footer>
+  </div>
+
 
 </body>

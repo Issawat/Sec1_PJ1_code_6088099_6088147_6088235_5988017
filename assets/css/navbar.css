@@ -30,9 +30,50 @@
     width: 100%;
   }
   .sticky + .content {
-    padding-top: 50px;
+    padding-top: 70px;
   }
   .off-screen{
       position: fixed;
       top : -100px;
   }
+
+  .fade-effect{
+    background-color: black;
+    -webkit-animation-name: fade; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: fade;
+    animation-duration: 1s;
+}
+.fade-effect-out{
+    background-color: black;
+    -webkit-animation-name: fadeOut; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: fadeOut;
+    animation-duration: 1s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: 0;
+         
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Standard syntax */
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Standard syntax */
+@keyframes fadeOut {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
