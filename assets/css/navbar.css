@@ -3,6 +3,9 @@
     background-size: 100%;
     background-position: center;
 }
+.center-text{
+    text-align: center;
+}
 .logo{
     display: block;
     width: 100px;
