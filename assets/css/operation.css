@@ -1,0 +1,29 @@
+@media (max-width: 800px){
+    .res-size{
+        flex-basis: 100%;
+       width: 100%;
+    }
+    .content1 div{
+        flex-basis: 100%;
+    }
+    .text-arr{
+        order: 2;
+    }
+    .img-arr{
+        order: 1;
+    }
+    .content2 div{
+        flex-basis: 100%;
+        flex-direction: column;
+    }
+    .content3 div{
+        flex-basis: 100%;
+    }
+    .text{
+        padding-top: 20px;
+        padding-bottom:20px;
+    }
+}
+.img{
+    flex-basis: 60%;
+}
