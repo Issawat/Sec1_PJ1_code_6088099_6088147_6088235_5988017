@@ -3,7 +3,7 @@
 
 <head>
   <!-- import global components-->
-  <link rel="shortcut icon" type="image/png" href="assets/images/logo.png"/>
+  <link rel="shortcut icon" type="image/png" href="assets/images/logo.png" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,24 +18,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,userscalable=no">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
   <!-- import local components-->
   <script src="assets/js/history.js"></script>
   <link rel="stylesheet" href="assets/css/history.css" type="text/css">
+  <script>
+    function voice(num) {
+      if (localStorage.getItem('isvoice') == 'true') {
+        if (num == 1) {
+          responsiveVoice.speak("Research Institute for Languages and Cultures of Asia, or RILCA, was firstly established in a name of Research Center for Languages and Cultures of Southeast Asia in 1974 to produce Linguistic academicians that are advantage in communicating with people on diversity race, languages and cultures. In 1981, was changed to Research Institute for Languages and Cultures for Rural Development and lastly became Research Institute for Languages and Cultures of Asia in 2009.");
+        }
+        else if (num == 2) {
+          responsiveVoice.speak("The history of the museum");
+        }
+        else if (num == 3) {
+          responsiveVoice.speak("Scroll down for the details");
+        }
+      }
+    }
+    function largeText() {
+      document.getElementById('nav').classList.add('text-lg')
+    }
+    function setVoice() {
+      if (localStorage.getItem('isvoice')) {
+        localStorage.setItem('isvoice', '')
+        document.getElementById('toggleTTS').style.color = 'white'
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        o.frequency.value = 350
+        var g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        g.gain.exponentialRampToValueAtTime(
+          0.00001, context.currentTime + 3
+        )
+        responsiveVoice.speak('text to speech off')
+      }
+      else {
+        localStorage.setItem('isvoice', 'true')
+        document.getElementById('toggleTTS').style.color = 'red'
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        var g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        g.gain.exponentialRampToValueAtTime(
+          0.00001, context.currentTime + 3
+        )
+        responsiveVoice.speak('text to speech on')
+      }
+    }
+  </script>
 </head>
 
 <body class="fade-effect">
+  <div class="d-none d-lg-block" style="
+      z-index:100;
+      position: fixed; 
+      margin-left: 10px; 
+      text-align: center; 
+      font-size:25pt; 
+      color: white;
+      border-radius:5px; 
+      background-color: rgba(255, 255, 255, 0.308); 
+      padding: 9px;
+      left: 0; 
+      top:40%;">
+    <div id="toggleTTS" onclick="setVoice()">
+      <ion-icon name="mic"></ion-icon>
+      <p style="font-size: 8pt">TTS</p>
+    </div>
+    <div id="toggleHCT">
+      <ion-icon name="color-fill"></ion-icon>
+      <p style="font-size: 8pt">HCT</p>
+    </div>
+  </div>
+  <div class="d-lg-none" style="z-index:300; border-bottom: solid 13px rgb(104, 57, 0); position: fixed; width: 100%; background-color: white; text-align: center;">
+      <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <ion-icon name="apps" style="margin:6px; font-size: 20pt; color: rgba(54, 30, 0);"></ion-icon>
+        <p style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
+      </button>
+      <div id="demo" class="collapse">
+          <hr style="
+          width: 40%;
+          color: rgba(54, 30, 0);
+          background-color: rgba(54, 30, 0)">
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="moreover.html">MOREOVER</a>
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="operation.html">OPERATION</a>
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="index.html"> HOME </a>
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="gallery.html">GALLERY</a>
+        <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+        <hr style="
+                width: 40%;
+                color: rgba(54, 30, 0);
+                background-color: rgba(54, 30, 0)">
+      </div>
+    </div>
+
   <!-- navbar component-->
-  <div class="header">
+  <div class="header d-none d-lg-block">
     <div class="fillHeader">
-       <img class="logo" src="assets/images/logo.png">
+      <img class="logo" src="assets/images/logo.png">
       <div>
         <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
         <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
       </div>
     </div>
   </div>
-  <div id="nav" style="z-index: 100">
-    <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
+  <div id="nav" class="d-none d-lg-block" style="z-index: 100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-opacity">
       <div class="d-md-flex d-block w-100">
         <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
           <div class="navbar-nav">
@@ -74,17 +170,18 @@
 
     <!-- section 1 -->
     <div class="dim-box">
-      <div class="text-center-box" data-aos="zoom-out" data-aos-duration="1300" >
+      <div class="text-center-box" data-aos="zoom-out" data-aos-duration="1300">
         <ion-icon name="timer" class="icon"></ion-icon>
         <hr style="
                 width: 40%;
                 color: rgb(255, 255, 255);
                 background-color: rgb(255, 255, 255);">
-        <h1 class="text-subject">
+        <h2 onmouseover="voice(2)" class="text-subject">
           <i> " The history of the museum " </i>
-        </h1>
-        <div class="bottom-fade" >
-          <img data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; padding-top: 200px; filter:invert(100%);">
+        </h2>
+        <div class="bottom-fade">
+          <img onmouseover="voice(3)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png"
+            style="width: 6%; min-width: 50px; padding-top: 200px; filter:invert(100%);">
         </div>
       </div>
     </div>
@@ -92,39 +189,48 @@
     <div class="dark-box">
       <div class="row no-gutters">
         <div class="col-sm-8" data-aos="fade-right" data-aos-duration="1300" data-aos-anchor-placement="top-center">
-            <hr style="
+          <hr style="
               width: 40%;
               color: rgb(255, 255, 255);
               background-color: rgb(255, 255, 255);">
-            <br>
-            <br>
-            <p class="article">
-              Research Institute for Languages and Cultures of Asia (RILCA) was firstly established in a name of
-              <i style="color: rgb(224, 209, 190)">
-                "Research Center for Languages and Cultures of Southeast Asia"
-              </i>
-              in 1974 to produce Linguistic academicians that are advantage in communicating with people on diversity race, languages and
-              cultures. In 1981, was changed to
-              <i style="color: rgb(224, 209, 190)">"Research Institute for Languages and Cultures for Rural Development" </i>
-              and lastly became <i style="color: rgb(224, 209, 190)">"Research Institute for Languages and Cultures of Asia"</i> in 2009.
-            </p>
-            <br>
-            <hr style="
+          <br>
+          <br>
+          <p onmouseover="voice(1)" class="article">
+            Research Institute for Languages and Cultures of Asia (RILCA) was firstly established in a name of
+            <i style="color: rgb(224, 209, 190)">
+              "Research Center for Languages and Cultures of Southeast Asia"
+            </i>
+            in 1974 to produce Linguistic academicians that are advantage in communicating with people on diversity race, languages and
+            cultures. In 1981, was changed to
+            <i style="color: rgb(224, 209, 190)">"Research Institute for Languages and Cultures for Rural Development" </i>
+            and lastly became
+            <i style="color: rgb(224, 209, 190)">"Research Institute for Languages and Cultures of Asia"</i> in 2009.
+          </p>
+          <br>
+          <hr style="
               width: 40%;
               color: rgb(255, 255, 255);
               background-color: rgb(255, 255, 255);">
-          </div>
+        </div>
         <div class="col-sm-4" data-aos="fade-left" data-aos-duration="1300" data-aos-anchor-placement="top-center">
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="assets/images/history2.JPG" style="width: 100%; transform: rotate(270deg); border-radius: 10px; border: solid 2px white;">
-          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <img src="assets/images/history2.JPG" style="width: 100%; transform: rotate(270deg); border-radius: 10px; border: solid 2px white;">
+        </div>
       </div>
 
     </div>
   </div>
 
-  <script>AOS.init();</script>
+  <script>
+    AOS.init();
+    if (localStorage.getItem('isvoice')) {
+      document.getElementById('toggleTTS').style.color = 'red'
+    }
+    else {
+      document.getElementById('toggleTTS').style.color = 'white'
+    }
+  </script>
 </body>

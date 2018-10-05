@@ -24,8 +24,32 @@
 </head>
 
 <body class="fade-effect">
+        <div class="d-lg-none" style="z-index:300; border-bottom: solid 13px rgb(104, 57, 0); position: fixed; top: 0; width: 100%; background-color: white; text-align: center;">
+                <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
+                  aria-expanded="false" aria-label="Toggle navigation">
+                  <ion-icon name="apps" style="margin:6px; font-size: 20pt; color: rgba(54, 30, 0);"></ion-icon>
+                  <p style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
+                </button>
+                <div id="demo" class="collapse">
+                    <hr style="
+                    width: 40%;
+                    color: rgba(54, 30, 0);
+                    background-color: rgba(54, 30, 0)">
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="moreover.html">MOREOVER</a>
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="operation.html">OPERATION</a>
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="index.html"> HOME </a>
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="gallery.html">GALLERY</a>
+                  <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                  <hr style="
+                          width: 40%;
+                          color: rgba(54, 30, 0);
+                          background-color: rgba(54, 30, 0)">
+                </div>
+              </div>   
     <!-- navbar component-->
-    <div class="header">
+    <div class="header d-none d-lg-block">
         <div class="fillHeader">
            <img class="logo" src="assets/images/logo.png">
           <div>
@@ -34,8 +58,8 @@
           </div>
         </div>
       </div>
-    <div id="nav" style="z-index: 100">
-        <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
+    <div id="nav" class="d-none d-lg-block" style="z-index: 100">
+        <nav class="navbar navbar-expand-md navbar-dark bg-opacity ">
             <div class="d-md-flex d-block w-100">
                 <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav">

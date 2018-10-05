@@ -6,7 +6,7 @@ window.onscroll = function () { scroller() };
     console.log(header.offsetTop, window.pageYOffset)
     if (window.pageYOffset > 195) {
       header.classList.add("sticky");
-      homeBtn.innerText = 'MU RILCA'
+      homeBtn.innerText = 'ANTHROPOLOGICAL CULTURE MUSEUM'
     } else if (window.pageYOffset <= 195) {
       header.classList.remove("sticky");
       homeBtn.innerText = 'HOME'
