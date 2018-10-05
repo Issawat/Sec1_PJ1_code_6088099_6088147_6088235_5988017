@@ -16,7 +16,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="assets/css/home.css" type="text/css">
-
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 
     <body class="fade-effect">
         <script>
@@ -26,18 +26,30 @@
                     case 1: {
                         backgroundImage.src = "assets/images/home2.JPG"
                         backgroundImage.className = await 'fixed-background fade-effect'
+                        if (localStorage.getItem('isvoice')) {
+                            responsiveVoice.speak("click to explore museum history");
+                        }
                     }; break;
                     case 2: {
                         backgroundImage.src = "assets/images/home3.JPG"
                         backgroundImage.className = await 'fixed-background fade-effect'
+                        if (localStorage.getItem('isvoice')) {
+                            responsiveVoice.speak("click to explore museum operation");
+                        }
                     }; break;
                     case 3: {
                         backgroundImage.src = "assets/images/home5.JPG"
                         backgroundImage.className = await 'fixed-background fade-effect'
+                        if (localStorage.getItem('isvoice')) {
+                            responsiveVoice.speak("click to explore museum information");
+                        }
                     }; break;
                     case 4: {
                         backgroundImage.src = "assets/images/home4.JPG"
                         backgroundImage.className = await 'fixed-background fade-effect'
+                        if (localStorage.getItem('isvoice')) {
+                            responsiveVoice.speak("click to visit museum web gallery");
+                        }
                     }; break;
                 }
             }
@@ -46,20 +58,81 @@
                 backgroundImage.src = await "assets/images/home1.JPG"
                 backgroundImage.className = await 'fixed-background fade-effect-out'
             }
+
+            function voice(num) {
+                if (localStorage.getItem('isvoice')) {
+                    if (num == 1) {
+                        responsiveVoice.speak("Welcome to ANTHROPOLOGICAL CULTURE MUSEUM, Research Institute for Languages and Cultures of Asia, Mahidol University");
+                    }
+                }
+            }
+            function setVoice() {
+                if (localStorage.getItem('isvoice')) {
+                    localStorage.setItem('isvoice', '')
+                    document.getElementById('toggleTTS').style.color = 'white'
+                    var context = new AudioContext()
+                    var o = context.createOscillator()
+                    o.frequency.value = 350
+                    var g = context.createGain()
+                    o.connect(g)
+                    g.connect(context.destination)
+                    o.start(0)
+                    g.gain.exponentialRampToValueAtTime(
+                        0.00001, context.currentTime + 2
+                    )
+                    responsiveVoice.speak('text to speech off')
+                }
+                else {
+                    localStorage.setItem('isvoice', 'true')
+                    document.getElementById('toggleTTS').style.color = 'red'
+                    var context = new AudioContext()
+                    var o = context.createOscillator()
+                    var g = context.createGain()
+                    o.connect(g)
+                    g.connect(context.destination)
+                    o.start(0)
+                    g.gain.exponentialRampToValueAtTime(
+                        0.00001, context.currentTime + 2
+                    )
+                    responsiveVoice.speak('text to speech on')
+                }
+            }
         </script>
+        <div class="d-none d-lg-block" style="
+        z-index:100;
+        position: fixed; 
+        margin-left: 10px; 
+        text-align: center; 
+        font-size:25pt; 
+        color: white;
+        border-radius:5px; 
+        background-color: rgba(0, 0, 0, 0.712); 
+        padding: 9px;
+        left: 0; 
+        top:50%;">
+            <div id="toggleTTS" onclick="setVoice()">
+                <ion-icon name="mic"></ion-icon>
+                <p style="font-size: 8pt">TTS</p>
+            </div>
+            <div id="toggleHCT">
+                <ion-icon name="color-fill"></ion-icon>
+                <p style="font-size: 8pt">HCT</p>
+            </div>
+        </div>
         <div>
             <img id="background" class="fixed-background" src="assets/images/home1.JPG">
             <div class="w-100 row h-100 fixed-opacity no-gutters"></div>
-            <div class="justify-content-center align-items-center center-box " data-aos="zoom-out" data-aos-delay="200" data-aos-duration="600">
+            <div onmouseover="voice(1)" class="justify-content-center align-items-center center-box " data-aos="zoom-out" data-aos-delay="200"
+                data-aos-duration="600">
                 <img class="center-image" src="assets/images/logo.png">
                 <hr style="
                 width: 70%;
                 color: rgb(255, 255, 255);
                 background-color: rgb(255, 255, 255);">
                 <br>
-                <h5 class="center-text">ANTHROPOLOGICAL CULTURE MUSEUM</h5>
+                <h4 class="center-text">ANTHROPOLOGICAL CULTURE MUSEUM</h4>
                 <br>
-                <h6 class="center-text">Research Institute for Languages and Cultures of Asia</h6>
+                <h5 class="center-text">Research Institute for Languages and Cultures of Asia</h5>
                 <h6 class="center-text">Mahidol University</h6>
                 <br>
                 <hr style="
@@ -117,5 +190,13 @@
                 <br>
             </div>
         </div>
-        <script>AOS.init();</script>
+        <script>
+            AOS.init();
+            if (localStorage.getItem('isvoice')) {
+                document.getElementById('toggleTTS').style.color = 'red'
+            }
+            else {
+                document.getElementById('toggleTTS').style.color = 'white'
+            }
+        </script>
     </body>
