@@ -6,7 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>ANTHROPOLOGICAL CULTURE MUSEUM | MAHIDOL UNIVERSITY</title>
         <link rel="stylesheet" href="assets/css/navbar.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/gallery.css" type="text/css">
         <script src="assets/js/navbar.js"></script>
+        <script src="assets/js/gallery.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -15,55 +17,86 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,userscalable=no">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     </head>
     
     <body class="fade-effect">
         <!-- navbar component-->
-        <div class="header">
-            <div class="fillHeader">
-               <img class="logo" src="assets/images/logo.png">
-              <div>
+    <div class="header">
+        <div class="fillHeader">
+            <img class="logo" src="assets/images/logo.png">
+            <div>
                 <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
                 <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
-              </div>
             </div>
-          </div>
-        <div id="nav" style="z-index: 100">
-            <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
-                <div class="d-md-flex d-block w-100">
-                    <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    HISTORY
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="history.html">HISTORY</a>
-                                    <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
-                                    <a class="dropdown-item" href="moreover.html">MOREOVER</a>
-                                </div>
-                            </li>
-                            <a class="nav-item nav-link" href="operation.html">OPERATION</a>
-                            <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
-                            <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    INFORMATION
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
-                                    <a class="dropdown-item" href="about.html">ABOUT US</a>
-                                </div>
-                            </li>
-                        </div>
+        </div>
+    </div>
+    <div id="nav" style="z-index: 100">
+        <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
+            <div class="d-md-flex d-block w-100">
+                <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                HISTORY
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="history.html">HISTORY</a>
+                                <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                                <a class="dropdown-item" href="moreover.html">MOREOVER</a>
+                            </div>
+                        </li>
+                        <a class="nav-item nav-link" href="operation.html">OPERATION</a>
+                        <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
+                        <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                INFORMATION
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                                <a class="dropdown-item" href="about.html">ABOUT US</a>
+                            </div>
+                        </li>
                     </div>
                 </div>
-            </nav>
-        </div>
-        <!-- end of navbar component-->
-    
-        <div class="content">
-    
-        </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end of navbar component-->
+    <img src="assets/operation-img/NSR_8507.jpg" class="bg">
+        <div class="content mar" style="background-color:rgba(0, 0, 0, 0.884)">
+            <div class="row space">
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                    <img id="slide1" class="ImageH" src="assets/images/Gall/1/1.JPG" >
+                </div>
         
-    </body>
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 divV">
+                    <img id="slide2" class="ImageV" src="assets/images/Gall/2/1.JPG" >
+                </div>
+            </div>
+            <div class="row space">
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 divV">
+                    <img  id="slide4" class="ImageV" src="assets/images/Gall/4/1.JPG" >
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                    <img  id="slide3" class="ImageH" src="assets/images/Gall/3/1.JPG" >
+                </div>
+            </div>
+            <div class="row space">
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <img  id="slide5" class="ImageH" src="assets/images/Gall/5/1.JPG" >
+                </div>
+            </div>
+        </div>
+</body>
