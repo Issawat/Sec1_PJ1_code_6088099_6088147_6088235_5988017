@@ -18,11 +18,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximumscale=1.0,userscalable=no">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
   <!-- import local components-->
   <script src="assets/js/history.js"></script>
   <link rel="stylesheet" href="assets/css/godeeper.css" type="text/css">
 </head>
-
+<script>
+    function voice(num) {
+      if (localStorage.getItem('isvoice') == 'true') {
+        if (num == 1) {
+          responsiveVoice.speak("Go deeper into the philosophy");
+        }
+        else if (num == 2) {
+          responsiveVoice.speak("The philosophy of RILCA is languages and Cultures are the heart of sustainable development Therefore, the main task of RILCA is to support research toward diversity of languages and cultures and also promote the positive communication outcomes in Southeast Asia. The research findings of each studies are advantage to many parts of society both nationally and internationally such as eduction and social development.");
+        }
+        else if (num == 3) {
+          responsiveVoice.speak("Scroll down for the details");
+        }
+      }
+    }
+    function largeText() {
+      document.getElementById('nav').classList.add('text-lg')
+    }
+    function setVoice() {
+      if (localStorage.getItem('isvoice')) {
+        localStorage.setItem('isvoice', '')
+        document.getElementById('toggleTTS').style.color = 'white'
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        o.frequency.value = 350
+        var g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        g.gain.exponentialRampToValueAtTime(
+          0.00001, context.currentTime + 3
+        )
+        responsiveVoice.speak('text to speech off')
+      }
+      else {
+        localStorage.setItem('isvoice', 'true')
+        document.getElementById('toggleTTS').style.color = 'red'
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        var g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        g.gain.exponentialRampToValueAtTime(
+          0.00001, context.currentTime + 3
+        )
+        responsiveVoice.speak('text to speech on')
+      }
+    }
+  </script>
 <body class="fade-effect">
     <div class="d-none d-lg-block" style="
     z-index:100;
@@ -103,7 +152,6 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
-                <a class="dropdown-item" href="about.html">ABOUT US</a>
               </div>
             </li>
           </div>
@@ -126,7 +174,7 @@
             margin-bottom: 5%;
             color: rgb(255, 255, 255);
             background-color: rgb(255, 255, 255);">
-        <h1 class="text-subject">
+        <h1 onmouseover="voice(1)" class="text-subject">
           <i> " Go Deeper into The Philosophy " </i>
           <hr style="
           width: 40%;
@@ -135,7 +183,7 @@
           background-color: rgb(255, 255, 255);">
         </h1>
         <div class="bottom-fade" >
-          <img data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
+          <img onmouseover="voice(3)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
         </div>
       </div>
     </div>
@@ -149,7 +197,7 @@
               background-color: rgb(255, 255, 255);">
             <br>
             <br>
-            <p class="article">
+            <p onmouseover="voice(2)" class="article">
                     The philosophy of RILCA is 
               <i style="color: rgb(224, 209, 190)"><b>
                     "languages and Cultures are the heart of sustainable development" </b>
@@ -190,6 +238,14 @@
 
   
 
-  <script>AOS.init();</script>
+  <script>
+  AOS.init();
+   if (localStorage.getItem('isvoice')) {
+      document.getElementById('toggleTTS').style.color = 'red'
+    }
+    else {
+      document.getElementById('toggleTTS').style.color = 'white'
+    }
+  </script>
 </body>
 
