@@ -20,6 +20,28 @@
 
     <body class="fade-effect">
         <script>
+            $(document).ready(function () {
+                if(localStorage.getItem('ishct')){
+                    $("#buttonset").css('color','yellow')
+                    for(let i = 1 ; i <= 10 ; i++)
+                    $(`#hctComponent${i}`).addClass('hct')
+                }
+                $("#buttonset").click(function () {
+                    if(localStorage.getItem('ishct')){
+                    localStorage.setItem('ishct','')
+                    $("#buttonset").css('color','white')
+                    for(let i = 1 ; i <= 10 ; i++)
+                    $(`#hctComponent${i}`).removeClass('hct')
+                    }
+                    else {
+                        localStorage.setItem('ishct','true')
+                        for(let i = 1 ; i <= 10 ; i++)
+                        $(`#hctComponent${i}`).addClass('hct')
+                        $("#buttonset").css('color','yellow')
+                        
+                    }
+                });
+            });
             async function hoverMenuImage(data) {
                 let backgroundImage = document.getElementById('background')
                 switch (data) {
@@ -98,7 +120,7 @@
                 }
             }
         </script>
-        <div class="d-none d-lg-block" style="
+        <div data-aos="slide-right" data-aos-duration="1000" class="d-none d-lg-block" style="
         z-index:100;
         position: fixed; 
         margin-left: 10px; 
@@ -114,26 +136,26 @@
                 <ion-icon name="mic"></ion-icon>
                 <p style="font-size: 8pt">TTS</p>
             </div>
-            <div id="toggleHCT">
+            <div id="buttonset">
                 <ion-icon name="color-fill"></ion-icon>
                 <p style="font-size: 8pt">HCT</p>
             </div>
         </div>
         <div>
             <img id="background" class="fixed-background" src="assets/images/home1.JPG">
-            <div class="w-100 row h-100 fixed-opacity no-gutters"></div>
-            <div onmouseover="voice(1)" class="justify-content-center align-items-center center-box " data-aos="zoom-out" data-aos-delay="200"
-                data-aos-duration="600">
+            <div id="hctComponent1" class="w-100 row h-100 fixed-opacity no-gutters"></div>
+            <div id="hctComponent2" onmouseover="voice(1)" class="justify-content-center align-items-center center-box" data-aos="zoom-out"
+                data-aos-delay="200" data-aos-duration="600">
                 <img class="center-image" src="assets/images/logo.png">
                 <hr style="
                 width: 70%;
                 color: rgb(255, 255, 255);
                 background-color: rgb(255, 255, 255);">
                 <br>
-                <h4 class="center-text">ANTHROPOLOGICAL CULTURE MUSEUM</h4>
+                <h4 id="hctComponent3" class="center-text">ANTHROPOLOGICAL CULTURE MUSEUM</h4>
                 <br>
-                <h5 class="center-text">Research Institute for Languages and Cultures of Asia</h5>
-                <h6 class="center-text">Mahidol University</h6>
+                <h5 id="hctComponent4" class="center-text">Research Institute for Languages and Cultures of Asia</h5>
+                <h6 id="hctComponent5" class="center-text">Mahidol University</h6>
                 <br>
                 <hr style="
                 width: 20%;
@@ -145,11 +167,11 @@
                     <div class="d-md-flex d-block w-100">
                         <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
-                                <a class="nav-item nav-link" onmouseover="hoverMenuImage(1)" onmouseout="mouseOutImage()" href="history.html">HISTORY</a>
-                                <a class="nav-item nav-link" onmouseover="hoverMenuImage(2)" onmouseout="mouseOutImage()" href="operation.html">OPERATION</a>
-                                <p class="brand">Welcome</p>
-                                <a class="nav-item nav-link" onmouseover="hoverMenuImage(3)" onmouseout="mouseOutImage()" href="otherinfo.html">INFORMATION</a>
-                                <a class="nav-item nav-link" onmouseover="hoverMenuImage(4)" onmouseout="mouseOutImage()" href="gallery.html">GALLERY</a>
+                                <a id="hctComponent6" class="nav-item nav-link" onmouseover="hoverMenuImage(1)" onmouseout="mouseOutImage()" href="history.html">HISTORY</a>
+                                <a id="hctComponent7" class="nav-item nav-link" onmouseover="hoverMenuImage(2)" onmouseout="mouseOutImage()" href="operation.html">OPERATION</a>
+                                <p id="hctComponent8" class="brand">Welcome</p>
+                                <a id="hctComponent9" class="nav-item nav-link" onmouseover="hoverMenuImage(3)" onmouseout="mouseOutImage()" href="otherinfo.html">INFORMATION</a>
+                                <a id="hctComponent10" class="nav-item nav-link" onmouseover="hoverMenuImage(4)" onmouseout="mouseOutImage()" href="gallery.html">GALLERY</a>
                             </div>
                         </div>
                     </div>

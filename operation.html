@@ -25,8 +25,53 @@
 </head>
 
 <body class="fade-effect">
+        <div class="d-none d-lg-block" style="
+        z-index:100;
+        position: fixed; 
+        margin-left: 10px; 
+        text-align: center; 
+        font-size:25pt; 
+        color: white;
+        border-radius:5px; 
+        background-color: rgba(0, 0, 0, 0.432); 
+        padding: 9px;
+        left: 0; 
+        top:40%;">
+      <div id="toggleTTS" onclick="setVoice()">
+        <ion-icon name="mic"></ion-icon>
+        <p style="font-size: 8pt">TTS</p>
+      </div>
+      <div id="toggleHCT">
+        <ion-icon name="color-fill"></ion-icon>
+        <p style="font-size: 8pt">HCT</p>
+      </div>
+    </div>
+    <div class="d-lg-none" style="z-index:300; border-bottom: solid 13px rgb(104, 57, 0); position: fixed; width: 100%; background-color: white; text-align: center;">
+        <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <ion-icon name="apps" style="margin:6px; font-size: 20pt; color: rgba(54, 30, 0);"></ion-icon>
+          <p style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
+        </button>
+        <div id="demo" class="collapse">
+            <hr style="
+            width: 40%;
+            color: rgba(54, 30, 0);
+            background-color: rgba(54, 30, 0)">
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="moreover.html">MOREOVER</a>
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="operation.html">OPERATION</a>
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="index.html"> HOME </a>
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="gallery.html">GALLERY</a>
+          <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+          <hr style="
+                  width: 40%;
+                  color: rgba(54, 30, 0);
+                  background-color: rgba(54, 30, 0)">
+        </div>
+      </div>
     <!-- navbar component-->
-    <div class="header">
+    <div class="header d-none d-lg-block">
         <div class="fillHeader">
             <img class="logo" src="assets/images/logo.png">
             <div>
@@ -35,7 +80,7 @@
             </div>
         </div>
     </div>
-    <div id="nav" style="z-index: 100">
+    <div id="nav" class="d-none d-lg-block" style="z-index: 100">
         <nav class="navbar navbar-expand-md navbar-dark bg-opacity">
             <div class="d-md-flex d-block w-100">
                 <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
@@ -70,41 +115,45 @@
         </nav>
     </div>
     <!-- end of navbar component-->
-    <div class="body" style=" background-image:url('assets/operation-img/NSR_8542.JPG');z-index: -1; background-size: 100%;">
-        <div class="content" style="background-color:rgba(0, 0, 0, 0.815); width:100%;">
+    <div class="body" style=" background-color: rgb(255, 255, 255);z-index: -1; background-size: 100%;">
+        <div class="content" style="background-color:rgb(255, 255, 255); width:100%;">
             <div class="content1" style="display: flex; flex-wrap: wrap;">
-                <div class="img res-size">
+                <div data-aos="fade-right" data-aos-duration="900" class="img res-size">
                     <img src="assets/operation-img/NSR_8491.jpg" style="width:100%; height: 100%;">
                 </div>
 
-                <div class="text left" style="display:flex; flex-direction: column; justify-content:center; align-items: center; padding-left: 50px">
-                    <p style="font-size:19pt; color:aliceblue;">Exhibition</p>
-                    <p style="font-size:12pt; color:aliceblue;"> The museum exhibits academic progression of the
+                <div data-aos="fade-right" data-aos-duration="1600" class="text left" style="display:flex; flex-direction: column; justify-content:center; align-items: center; padding-left: 50px">
+                    <i style="font-size:30pt; color:rgb(146, 88, 0);">"Exhibition"</i>
+                    <br>
+                    <p style="font-size:15pt; color:rgb(146, 88, 0);"> The museum exhibits academic progression of the
                         Institution.</p>
-                </div>
+                    </div>
                 
             </div>
             <div class="content2" style="display: flex;  justify-content: flex-end; flex-wrap: wrap;">
-                <div class="text text-arr right"style="display:flex; flex-direction: column; justify-content:center; align-items: center; padding-right: 30px;">
-                    <p style="font-size:19pt; color:aliceblue;">Interactive conversation</p>
-                    <p style="font-size:11pt; color:aliceblue;"> The museum is making a discussion through ethnic
+                <div data-aos="fade-left" data-aos-duration="900" class="text text-arr right"style="display:flex; flex-direction: column; justify-content:center; align-items: center; padding-right: 30px;">
+                    <i style="font-size:30pt; color:rgb(146, 88, 0);"> "Interactive conversation"</i>
+                    <br>
+                    <p style="font-size:15pt; color:rgb(146, 88, 0);"> The museum is making a discussion through ethnic
                             traditional villagesscape.</p>
                 </div>
-                <div class="img img-arr res-size">
+                <div data-aos="fade-left" data-aos-duration="1600" class="img img-arr res-size">
                     <img src="assets/operation-img/NSR_8470.jpg" style="width:100%; height: 100%;">
                 </div>
                 
             </div>
             <div class="content3" style="display: flex; flex-wrap: wrap;">
-                <div class="img res-size">
-                    <img src="assets/operation-img/NSR_8518.jpg" style="width:100%; height: 100%;">
+                <div data-aos="fade-right" data-aos-duration="900" class="img res-size">
+                    <img src="assets/operation-img/NSR_8518.jpg" style="width:100%; ">
                 </div>
-                <div class="text left" style="display:flex; flex-direction: column; justify-content:center; align-items: center; padding-left: 50px">
-                    <p style="font-size:19pt; color:aliceblue;">Practicum Arena</p>
-                    <p style="font-size:12pt; color:aliceblue;">The museum is used as practicum arena for all museum
+                <div data-aos="fade-right" data-aos-duration="1600" class="text left" style="display:flex; flex-direction: column; justify-content:center; align-items: center; padding-left: 50px; background-color: linear-gradient( rgba(0, 0, 0, 0.7),rgba(60, 77, 77, 0.7));">
+                    <i style="font-size:30pt; color:rgb(146, 88, 0);"> "Practicum Arena"</i>
+                    <br>
+                    <p style="font-size:15pt; color:rgb(146, 88, 0);">The museum is used as practicum arena for all museum
                             people.</p>
                 </div>
             </div>
         </div>
     </div>
+    <script>AOS.init();</script>
 </body>

@@ -24,7 +24,7 @@
     top:-70px;
     z-index: -99;
     min-height: 80%;
-    max-height: 120%;
+    max-height: 130%;
 }
 .dim-box{
     position: relative;
@@ -53,7 +53,7 @@
 }
 .article{
     color: white;
-    font-size: 22pt;
+    font-size: 25pt;
     text-align: center;
 }
 

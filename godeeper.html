@@ -24,6 +24,27 @@
 </head>
 
 <body class="fade-effect">
+    <div class="d-none d-lg-block" style="
+    z-index:100;
+    position: fixed; 
+    margin-left: 10px; 
+    text-align: center; 
+    font-size:25pt; 
+    color: white;
+    border-radius:5px; 
+    background-color: rgba(255, 255, 255, 0.432); 
+    padding: 9px;
+    left: 0; 
+    top:40%;">
+  <div id="toggleTTS" onclick="setVoice()">
+    <ion-icon name="mic"></ion-icon>
+    <p style="font-size: 8pt">TTS</p>
+  </div>
+  <div id="toggleHCT">
+    <ion-icon name="color-fill"></ion-icon>
+    <p style="font-size: 8pt">HCT</p>
+  </div>
+</div>
   <!-- navbar component-->
   <div class="d-lg-none" style="z-index:300; border-bottom: solid 13px rgb(104, 57, 0); position: fixed; width: 100%; background-color: white; text-align: center;">
       <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
@@ -114,7 +135,7 @@
           background-color: rgb(255, 255, 255);">
         </h1>
         <div class="bottom-fade" >
-          <img data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; padding-top: 200px; filter:invert(100%);">
+          <img data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
         </div>
       </div>
     </div>
@@ -154,7 +175,7 @@
 
    <!-- section 3 -->
    <div class="dark-box">
-        <div class="row no-gutters">
+        <div class="row">
               <div class="col-sm-6" data-aos="fade-left" data-aos-duration="1300" data-aos-anchor-placement="top-center">
                       <img src="assets/images/NSR_8524.JPG" style="width: 100%; transform: rotate(0deg); border-radius: 10px; border: solid 2px white;">
                     </div>
