@@ -37,3 +37,28 @@
   width: 100%;
   z-index: -2;
 }
+.text-subject
+{
+    color: white;
+    text-align: center;
+}
+.bottom-fade{
+  background-image: linear-gradient(rgba(0, 0, 0, 0),rgb(0, 0, 0));
+  width: 100%;
+  height: 500px;
+}
+.dim-box{
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.514);
+  width: 100%;
+  z-index: 0;
+}
+.text-center-box{
+  text-align: center;
+  padding-top: 200px;
+}
+.hct{
+  color:yellow !important;
+  opacity: 1 !important;
+  background-color: black !important;
+}

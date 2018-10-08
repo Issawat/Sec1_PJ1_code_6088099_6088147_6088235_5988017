@@ -103,3 +103,9 @@
 .text-lg {
     font-size: 1.6em;
   }
+
+  .hct{
+    color:yellow !important;
+    opacity: 1 !important;
+    background-color: black !important;
+}

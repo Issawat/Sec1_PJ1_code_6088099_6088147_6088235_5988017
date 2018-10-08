@@ -24,6 +24,30 @@
   <link rel="stylesheet" href="assets/css/godeeper.css" type="text/css">
 </head>
 <script>
+    
+    $(document).ready(function () {
+                if(localStorage.getItem('ishct')){
+                    $("#toggleHCT").css('color','yellow')
+                    for(let i = 1 ; i <= 16 ; i++)
+                    $(`#hctComponent${i}`).addClass('hct')
+                }
+                $("#toggleHCT").click(function () {
+                    if(localStorage.getItem('ishct')){
+                    localStorage.setItem('ishct','')
+                    $("#toggleHCT").css('color','white')
+                    for(let i = 1 ; i <= 16 ; i++)
+                    $(`#hctComponent${i}`).removeClass('hct')
+                    }
+                    else {
+                        localStorage.setItem('ishct','true')
+                        for(let i = 1 ; i <= 16 ; i++)
+                        $(`#hctComponent${i}`).addClass('hct')
+                        $("#toggleHCT").css('color','yellow')
+                        
+                    }
+                });
+            });
+
     function voice(num) {
       if (localStorage.getItem('isvoice') == 'true') {
         if (num == 1) {
@@ -123,8 +147,8 @@
     <div class="fillHeader">
        <img class="logo" src="assets/images/logo.png">
       <div>
-        <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
-        <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
+        <h3 id="hctComponent1"class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
+        <p id="hctComponent2"class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
       </div>
     </div>
   </div>
@@ -134,24 +158,24 @@
         <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a id="hctComponent3"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 HISTORY
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="history.html">HISTORY</a>
-                <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
-                <a class="dropdown-item" href="moreover.html">MOREOVER</a>
+                <a id="hctComponent4" class="dropdown-item" href="history.html">HISTORY</a>
+                <a id="hctComponent5"class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                <a id="hctComponent6"class="dropdown-item" href="moreover.html">MOREOVER</a>
               </div>
             </li>
-            <a class="nav-item nav-link" href="operation.html">OPERATION</a>
-            <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
-            <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
+            <a id="hctComponent7"class="nav-item nav-link" href="operation.html">OPERATION</a>
+            <a id="hctComponent8"id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
+            <a id="hctComponent9"class="nav-item nav-link" href="gallery.html">GALLERY</a>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a id="hctComponent10"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 INFORMATION
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                <a id="hctComponent11"class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
               </div>
             </li>
           </div>
@@ -175,7 +199,7 @@
             color: rgb(255, 255, 255);
             background-color: rgb(255, 255, 255);">
         <h1 onmouseover="voice(1)" class="text-subject">
-          <i> " Go Deeper into The Philosophy " </i>
+          <i id="hctComponent12"> " Go Deeper into The Philosophy " </i>
           <hr style="
           width: 40%;
           margin-top: 5%;
@@ -197,14 +221,14 @@
               background-color: rgb(255, 255, 255);">
             <br>
             <br>
-            <p onmouseover="voice(2)" class="article">
+            <p id="hctComponent13"onmouseover="voice(2)" class="article">
                     The philosophy of RILCA is 
-              <i style="color: rgb(224, 209, 190)"><b>
+              <i id="hctComponent14"style="color: rgb(224, 209, 190)"><b>
                     "languages and Cultures are the heart of sustainable development" </b>
               </i>
               Therefore, the main task of RILCA is
-              <i style="color: rgb(224, 209, 190)"> to support research toward diversity of languages and cultures </i>
-              and also<i style="color: rgb(224, 209, 190)"> promote the positive communication outcomes in Southeast Asia.</i> The research findings of each studies are advantage to many parts of society both nationally
+              <i id="hctComponent15" style="color: rgb(224, 209, 190)"> to support research toward diversity of languages and cultures </i>
+              and also<i id="hctComponent16"style="color: rgb(224, 209, 190)"> promote the positive communication outcomes in Southeast Asia.</i> The research findings of each studies are advantage to many parts of society both nationally
               and internationally such as eduction and social development.
             </p>
             <br>

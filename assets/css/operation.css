@@ -33,3 +33,8 @@
 .img{
     flex-basis: 60%;
 }
+.hct{
+    color:yellow !important;
+    opacity: 1 !important;
+    background-color: black !important;
+}

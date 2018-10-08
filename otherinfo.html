@@ -22,10 +22,34 @@
     <!-- import local components-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/css/history.css" type="text/css">
+   
 </head>
 
 <body class="fade-effect">
         <script>
+                $(document).ready(function () {
+                if(localStorage.getItem('ishct')){
+                    $("#toggleHCT").css('color','yellow')
+                    for(let i = 1 ; i <= 30 ; i++)
+                    $(`#hctComponent${i}`).addClass('hct')
+                }
+                $("#toggleHCT").click(function () {
+                    if(localStorage.getItem('ishct')){
+                    localStorage.setItem('ishct','')
+                    $("#toggleHCT").css('color','white')
+                    for(let i = 1 ; i <= 30 ; i++)
+                    $(`#hctComponent${i}`).removeClass('hct')
+                    }
+                    else {
+                        localStorage.setItem('ishct','true')
+                        for(let i = 1 ; i <= 30 ; i++)
+                        $(`#hctComponent${i}`).addClass('hct')
+                        $("#toggleHCT").css('color','yellow')
+                        
+                    }
+                });
+            });
+               
                 function voice(num) {
                   if (localStorage.getItem('isvoice') == 'true') {
                     if (num == 1) {
@@ -120,20 +144,20 @@
         <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
             aria-expanded="false" aria-label="Toggle navigation">
             <ion-icon name="apps" style="margin:6px; font-size: 20pt; color: rgba(54, 30, 0);"></ion-icon>
-            <p style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
+            <p id="hctComponent1"style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
         </button>
         <div id="demo" class="collapse">
             <hr style="
                     width: 40%;
                     color: rgba(54, 30, 0);
                     background-color: rgba(54, 30, 0)">
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="moreover.html">MOREOVER</a>
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="operation.html">OPERATION</a>
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="index.html"> HOME </a>
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="gallery.html">GALLERY</a>
-            <a style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+            <a id="hctComponent2"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
+            <a id="hctComponent3"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+            <a id="hctComponent4"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="moreover.html">MOREOVER</a>
+            <a id="hctComponent5"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="operation.html">OPERATION</a>
+            <a id="hctComponent6"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="index.html"> HOME </a>
+            <a id="hctComponent7"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="gallery.html">GALLERY</a>
+            <a id="hctComponent8"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
             <hr style="
                           width: 40%;
                           color: rgba(54, 30, 0);
@@ -145,8 +169,8 @@
         <div class="fillHeader">
             <img class="logo" src="assets/images/logo.png">
             <div>
-                <h3 class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
-                <p class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
+                <h3 id="hctComponent9"class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
+                <p id="hctComponent10"class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
             </div>
         </div>
     </div>
@@ -156,24 +180,24 @@
                 <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a id="hctComponent11"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 HISTORY
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="history.html">HISTORY</a>
-                                <a class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
-                                <a class="dropdown-item" href="moreover.html">MOREOVER</a>
+                                <a id="hctComponent12"class="dropdown-item" href="history.html">HISTORY</a>
+                                <a id="hctComponent13"class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                                <a id="hctComponent14"class="dropdown-item" href="moreover.html">MOREOVER</a>
                             </div>
                         </li>
-                        <a class="nav-item nav-link" href="operation.html">OPERATION</a>
-                        <a id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
-                        <a class="nav-item nav-link" href="gallery.html">GALLERY</a>
+                        <a id="hctComponent15"class="nav-item nav-link" href="operation.html">OPERATION</a>
+                        <a id="hctComponent16"id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
+                        <a id="hctComponent17"class="nav-item nav-link" href="gallery.html">GALLERY</a>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a id="hctComponent18"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 INFORMATION
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+                                <a id="hctComponent19" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
                             </div>
                         </li>
                     </div>
@@ -191,7 +215,7 @@
                             color: rgb(255, 255, 255);
                             background-color: rgb(255, 255, 255);">
             <h1 onmouseover="voice(1)" class="text-subject">
-                <i> " Museum Information " </i>
+                <i id="hctComponent20"> " Museum Information " </i>
             </h1>
             <hr style="
                             width: 40%;
@@ -210,7 +234,7 @@
                                 color: rgb(255, 255, 255);
                                 background-color: rgb(255, 255, 255);">
                 <h1 onmouseover="voice(2)" class="text-subject">
-                    <i> " General Information " </i>
+                    <i id="hctComponent21"> " General Information " </i>
                 </h1>
                 <hr style="
                                 width: 20%;
@@ -227,7 +251,7 @@
                 <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
                     <ion-icon name="business" class="icon-item"></ion-icon>
                     <br>
-                    <p onmouseover="voice(3)" class="text-content">
+                    <p id="hctComponent22"onmouseover="voice(3)" class="text-content">
                         1st Floor
                         <br> Research Institute for
                         <br> Languages and Cultures of Asia
@@ -236,7 +260,7 @@
                 <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
                     <ion-icon name="calendar" class="icon-item"></ion-icon>
                     <br>
-                    <p onmouseover="voice(4)" class="text-content">
+                    <p id="hctComponent23"onmouseover="voice(4)" class="text-content">
                         Office Hours
                         <br> Monday - Friday
                         <br> 8.30 a.m. – 4.30 p.m.</p>
@@ -244,10 +268,10 @@
                 <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
                     <ion-icon name="wallet" class="icon-item"></ion-icon>
                     <br>
-                    <p onmouseover="voice(5)" class="text-content">
+                    <p id="hctComponent24"onmouseover="voice(5)" class="text-content">
                         Museum Fee
                         <br>
-                        <i>"Free for all"</i>
+                        <iid="hctComponent25">"Free for all"</i>
                         <br>
                 </div>
             </div>
@@ -263,7 +287,7 @@
                 <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="400" data-aos-anchor-placement="top">
                     <ion-icon name="call" class="icon-item"></ion-icon>
                     <br>
-                    <p onmouseover="voice(6)" class="text-content">
+                    <p id="hctComponent26"onmouseover="voice(6)" class="text-content">
                         iCulture Group
                         <br> Tel: 080-688-7675
                         <br> 0-2800-2308-14 ext. 3405
@@ -274,7 +298,7 @@
                 <div class="col-sm" style="margin-bottom: 50px;" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500" data-aos-anchor-placement="top">
                     <ion-icon name="mail" class="icon-item"></ion-icon>
                     <br>
-                    <p onmouseover="voice(7)" class="text-content">
+                    <p id="hctComponent27"onmouseover="voice(7)" class="text-content">
                         E-mail
                         <br> rilca.mu@gmail.com
                         <br> iculture408@gmail.com
@@ -290,7 +314,7 @@
                                 color: rgb(255, 255, 255);
                                 background-color: rgb(255, 255, 255);">
                 <h1 onmouseover="voice(8)" class="text-subject">
-                    <i> " Museum Location" </i>
+                    <i id="hctComponent28"> " Museum Location" </i>
                 </h1>
                 <hr style="
                                 width: 20%;
