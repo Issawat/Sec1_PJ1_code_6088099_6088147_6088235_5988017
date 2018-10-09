@@ -22,103 +22,103 @@
     <!-- import local components-->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="assets/css/history.css" type="text/css">
-   
+
 </head>
 
 <body class="fade-effect">
-        <script>
-                $(document).ready(function () {
-                if(localStorage.getItem('ishct')){
-                    $("#toggleHCT").css('color','yellow')
-                    for(let i = 1 ; i <= 30 ; i++)
+    <script>
+        $(document).ready(function () {
+            if (localStorage.getItem('ishct')) {
+                $("#toggleHCT").css('color', 'yellow')
+                for (let i = 1; i <= 30; i++)
                     $(`#hctComponent${i}`).addClass('hct')
+            }
+            $("#toggleHCT").click(function () {
+                if (localStorage.getItem('ishct')) {
+                    localStorage.setItem('ishct', '')
+                    $("#toggleHCT").css('color', 'white')
+                    for (let i = 1; i <= 30; i++)
+                        $(`#hctComponent${i}`).removeClass('hct')
                 }
-                $("#toggleHCT").click(function () {
-                    if(localStorage.getItem('ishct')){
-                    localStorage.setItem('ishct','')
-                    $("#toggleHCT").css('color','white')
-                    for(let i = 1 ; i <= 30 ; i++)
-                    $(`#hctComponent${i}`).removeClass('hct')
-                    }
-                    else {
-                        localStorage.setItem('ishct','true')
-                        for(let i = 1 ; i <= 30 ; i++)
+                else {
+                    localStorage.setItem('ishct', 'true')
+                    for (let i = 1; i <= 30; i++)
                         $(`#hctComponent${i}`).addClass('hct')
-                        $("#toggleHCT").css('color','yellow')
-                        
-                    }
-                });
+                    $("#toggleHCT").css('color', 'yellow')
+
+                }
             });
-               
-                function voice(num) {
-                  if (localStorage.getItem('isvoice') == 'true') {
-                    if (num == 1) {
-                      responsiveVoice.speak("Museum Information");
-                    }
-                    else if (num == 2) {
-                      responsiveVoice.speak("General Information");
-                    }
-                    else if (num == 3) {
-                      responsiveVoice.speak("Location, 1st Floor Research Institute for Languages and Cultures of Asia Mahidol University, Salaya Campus");
-                    }
-                    else if (num == 4) {
-                      responsiveVoice.speak("Office Hours, Monday to Friday, from 8.30 a.m. to 4.30 p.m.");
-                    }
-                    else if (num == 5) {
-                      responsiveVoice.speak("Museum Fee, Free for all");
-                    }
-                    else if (num == 6) {
-                      responsiveVoice.speak("iCulture Group Tel: 080-688-7675 or 0-2800-2308-14 ext. 3 4 0 5. For Public Relations office tel: 0-2800-2308-14 ext. 3 4 4 7 ");
-                    }
-                    else if (num == 7) {
-                      responsiveVoice.speak("E-mail r i l c a.mu@gmail.com or iculture408@gmail.com ");
-                    }
-                    else if (num == 8) {
-                      responsiveVoice.speak("Museum Location");
-                    }
-                    else if (num == 9) {
-                      responsiveVoice.speak("Scroll down for the details");
-                    }
-                    else if (num == 10) {
-                      responsiveVoice.speak("This is a Google maps");
-                    }
-                  }
+        });
+
+        function voice(num) {
+            if (localStorage.getItem('isvoice') == 'true') {
+                if (num == 1) {
+                    responsiveVoice.speak("Museum Information");
                 }
-                function largeText() {
-                  document.getElementById('nav').classList.add('text-lg')
+                else if (num == 2) {
+                    responsiveVoice.speak("General Information");
                 }
-                function setVoice() {
-                  if (localStorage.getItem('isvoice')) {
-                    localStorage.setItem('isvoice', '')
-                    document.getElementById('toggleTTS').style.color = 'white'
-                    var context = new AudioContext()
-                    var o = context.createOscillator()
-                    o.frequency.value = 350
-                    var g = context.createGain()
-                    o.connect(g)
-                    g.connect(context.destination)
-                    o.start(0)
-                    g.gain.exponentialRampToValueAtTime(
-                      0.00001, context.currentTime + 3
-                    )
-                    responsiveVoice.speak('text to speech off')
-                  }
-                  else {
-                    localStorage.setItem('isvoice', 'true')
-                    document.getElementById('toggleTTS').style.color = 'red'
-                    var context = new AudioContext()
-                    var o = context.createOscillator()
-                    var g = context.createGain()
-                    o.connect(g)
-                    g.connect(context.destination)
-                    o.start(0)
-                    g.gain.exponentialRampToValueAtTime(
-                      0.00001, context.currentTime + 3
-                    )
-                    responsiveVoice.speak('text to speech on')
-                  }
+                else if (num == 3) {
+                    responsiveVoice.speak("Location, 1st Floor Research Institute for Languages and Cultures of Asia Mahidol University, Salaya Campus");
                 }
-              </script>
+                else if (num == 4) {
+                    responsiveVoice.speak("Office Hours, Monday to Friday, from 8.30 a.m. to 4.30 p.m.");
+                }
+                else if (num == 5) {
+                    responsiveVoice.speak("Museum Fee, Free for all");
+                }
+                else if (num == 6) {
+                    responsiveVoice.speak("iCulture Group Tel: 080-688-7675 or 0-2800-2308-14 ext. 3 4 0 5. For Public Relations office tel: 0-2800-2308-14 ext. 3 4 4 7 ");
+                }
+                else if (num == 7) {
+                    responsiveVoice.speak("E-mail r i l c a.mu@gmail.com or iculture408@gmail.com ");
+                }
+                else if (num == 8) {
+                    responsiveVoice.speak("Museum Location");
+                }
+                else if (num == 9) {
+                    responsiveVoice.speak("Scroll down for the details");
+                }
+                else if (num == 10) {
+                    responsiveVoice.speak("This is a Google maps");
+                }
+            }
+        }
+        function largeText() {
+            document.getElementById('nav').classList.add('text-lg')
+        }
+        function setVoice() {
+            if (localStorage.getItem('isvoice')) {
+                localStorage.setItem('isvoice', '')
+                document.getElementById('toggleTTS').style.color = 'white'
+                var context = new AudioContext()
+                var o = context.createOscillator()
+                o.frequency.value = 350
+                var g = context.createGain()
+                o.connect(g)
+                g.connect(context.destination)
+                o.start(0)
+                g.gain.exponentialRampToValueAtTime(
+                    0.00001, context.currentTime + 3
+                )
+                responsiveVoice.speak('text to speech off')
+            }
+            else {
+                localStorage.setItem('isvoice', 'true')
+                document.getElementById('toggleTTS').style.color = 'red'
+                var context = new AudioContext()
+                var o = context.createOscillator()
+                var g = context.createGain()
+                o.connect(g)
+                g.connect(context.destination)
+                o.start(0)
+                g.gain.exponentialRampToValueAtTime(
+                    0.00001, context.currentTime + 3
+                )
+                responsiveVoice.speak('text to speech on')
+            }
+        }
+    </script>
     <div class="d-none d-lg-block" style="
         z-index:100;
         position: fixed; 
@@ -141,23 +141,29 @@
         </div>
     </div>
     <div class="d-lg-none" style="z-index:300; border-bottom: solid 13px rgb(104, 57, 0); position: fixed; top: 0; width: 100%; background-color: white; text-align: center;">
-        <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo"
+            aria-controls="demo" aria-expanded="false" aria-label="Toggle navigation">
             <ion-icon name="apps" style="margin:6px; font-size: 20pt; color: rgba(54, 30, 0);"></ion-icon>
-            <p id="hctComponent1"style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
+            <p id="hctComponent1" style="font-size: 10pt; color: rgba(54, 30, 0);">ANTHROPOLOGICAL CULTURE MUSEUM</p>
         </button>
         <div id="demo" class="collapse">
             <hr style="
                     width: 40%;
                     color: rgba(54, 30, 0);
                     background-color: rgba(54, 30, 0)">
-            <a id="hctComponent2"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
-            <a id="hctComponent3"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
-            <a id="hctComponent4"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="moreover.html">MOREOVER</a>
-            <a id="hctComponent5"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="operation.html">OPERATION</a>
-            <a id="hctComponent6"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="index.html"> HOME </a>
-            <a id="hctComponent7"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="gallery.html">GALLERY</a>
-            <a id="hctComponent8"style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item" href="otherinfo.html">MUSEUM INFORMATION</a>
+            <a id="hctComponent2" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" href="history.html">HISTORY</a>
+            <a id="hctComponent3" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item"
+                href="goDeeper.html">GO DEEPER</a>
+            <a id="hctComponent4" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item"
+                href="moreover.html">MOREOVER</a>
+            <a id="hctComponent5" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item"
+                href="operation.html">OPERATION</a>
+            <a id="hctComponent6" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item"
+                href="index.html"> HOME </a>
+            <a id="hctComponent7" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item"
+                href="gallery.html">GALLERY</a>
+            <a id="hctComponent8" style="color: rgba(54, 30, 0); padding-bottom: 10px;" class="dropdown-item" class="dropdown-item"
+                href="otherinfo.html">MUSEUM INFORMATION</a>
             <hr style="
                           width: 40%;
                           color: rgba(54, 30, 0);
@@ -169,8 +175,9 @@
         <div class="fillHeader">
             <img class="logo" src="assets/images/logo.png">
             <div>
-                <h3 id="hctComponent9"class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
-                <p id="hctComponent10"class="text">Research Institute for Languages and Cultures of Asia, Mahidol University</p>
+                <h3 id="hctComponent9" class="text">ANTHROPOLOGICAL CULTURE MUSEUM </h3>
+                <p id="hctComponent10" class="text">Research Institute for Languages and Cultures of Asia, Mahidol
+                    University</p>
             </div>
         </div>
     </div>
@@ -180,20 +187,23 @@
                 <div class="collapse navbar-collapse mx-auto w-auto justify-content-center" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a id="hctComponent11"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a id="hctComponent11" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 HISTORY
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a id="hctComponent12"class="dropdown-item" href="history.html">HISTORY</a>
-                                <a id="hctComponent13"class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
-                                <a id="hctComponent14"class="dropdown-item" href="moreover.html">MOREOVER</a>
+                                <a id="hctComponent12" class="dropdown-item" href="history.html">HISTORY</a>
+                                <a id="hctComponent13" class="dropdown-item" href="goDeeper.html">GO DEEPER</a>
+                                <a id="hctComponent14" class="dropdown-item" href="moreover.html">MOREOVER</a>
                             </div>
                         </li>
-                        <a id="hctComponent15"class="nav-item nav-link" href="operation.html">OPERATION</a>
-                        <a id="hctComponent16"id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME </a>
-                        <a id="hctComponent17"class="nav-item nav-link" href="gallery.html">GALLERY</a>
+                        <a id="hctComponent15" class="nav-item nav-link" href="operation.html">OPERATION</a>
+                        <a id="hctComponent16" id="homeBtn" class="nav-item nav-link active" href="index.html"> HOME
+                        </a>
+                        <a id="hctComponent17" class="nav-item nav-link" href="gallery.html">GALLERY</a>
                         <li class="nav-item dropdown">
-                            <a id="hctComponent18"class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a id="hctComponent18" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 INFORMATION
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -206,28 +216,29 @@
         </nav>
     </div>
     <!-- end of navbar component-->
-    <img src="assets/operation-img/NSR_8507.jpg" class="bg-img">
-    <div class="content">
-        <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
-            <hr style="
+    <div id="hctComponent29">
+        <img  src="assets/operation-img/NSR_8507.jpg" class="bg-img">
+        <div class="content">
+            <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
+                <hr style="
                             width: 40%;
                             margin-bottom: 5%;
                             color: rgb(255, 255, 255);
                             background-color: rgb(255, 255, 255);">
-            <h1 onmouseover="voice(1)" class="text-subject">
-                <i id="hctComponent20"> " Museum Information " </i>
-            </h1>
-            <hr style="
+                <h1 onmouseover="voice(1)" class="text-subject">
+                    <i id="hctComponent20"> " Museum Information " </i>
+                </h1>
+                <hr style="
                             width: 40%;
                             margin-top: 5%;
                             color: rgb(255, 255, 255);
                             background-color: rgb(255, 255, 255);">
-            <img onmouseover="voice(9)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png"
-                style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
-            <br>
-            <br>
-        </div>
-        <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
+                <img onmouseover="voice(9)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center"
+                    data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
+                <br>
+                <br>
+            </div>
+            <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
                 <hr style="
                                 width: 20%;
                                 margin-bottom: 5%;
@@ -241,73 +252,75 @@
                                 margin-top: 5%;
                                 color: rgb(255, 255, 255);
                                 background-color: rgb(255, 255, 255);">
-                <img onmouseover="voice(9)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png"
-                    style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
+                <img onmouseover="voice(9)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center"
+                    data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
                 <br>
                 <br>
             </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
-                    <ion-icon name="business" class="icon-item"></ion-icon>
-                    <br>
-                    <p id="hctComponent22"onmouseover="voice(3)" class="text-content">
-                        1st Floor
-                        <br> Research Institute for
-                        <br> Languages and Cultures of Asia
-                        <br> Mahidol University, Salaya Campus</p>
-                </div>
-                <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
-                    <ion-icon name="calendar" class="icon-item"></ion-icon>
-                    <br>
-                    <p id="hctComponent23"onmouseover="voice(4)" class="text-content">
-                        Office Hours
-                        <br> Monday - Friday
-                        <br> 8.30 a.m. – 4.30 p.m.</p>
-                </div>
-                <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
-                    <ion-icon name="wallet" class="icon-item"></ion-icon>
-                    <br>
-                    <p id="hctComponent24"onmouseover="voice(5)" class="text-content">
-                        Museum Fee
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
+                        <ion-icon name="business" class="icon-item"></ion-icon>
                         <br>
-                        <iid="hctComponent25">"Free for all"</i>
+                        <p id="hctComponent22" onmouseover="voice(3)" class="text-content">
+                            1st Floor
+                            <br> Research Institute for
+                            <br> Languages and Cultures of Asia
+                            <br> Mahidol University, Salaya Campus</p>
+                    </div>
+                    <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="200">
+                        <ion-icon name="calendar" class="icon-item"></ion-icon>
                         <br>
+                        <p id="hctComponent23" onmouseover="voice(4)" class="text-content">
+                            Office Hours
+                            <br> Monday - Friday
+                            <br> 8.30 a.m. – 4.30 p.m.</p>
+                    </div>
+                    <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+                        <ion-icon name="wallet" class="icon-item"></ion-icon>
+                        <br>
+                        <p id="hctComponent24" onmouseover="voice(5)" class="text-content">
+                            Museum Fee
+                            <br>
+                            <iid="hctComponent25">"Free for all"</i>
+                                <br>
+                    </div>
                 </div>
             </div>
-        </div>
-        <hr style="
+            <hr style="
         width: 60%;
         margin-top: 5%;
         margin-bottom: 5%;
         color: rgb(255, 255, 255);
         background-color: rgb(255, 255, 255);">
-        <div class="container">
-            <div class="row no-gutters" style="width:70%; margin: auto;">
-                <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="400" data-aos-anchor-placement="top">
-                    <ion-icon name="call" class="icon-item"></ion-icon>
-                    <br>
-                    <p id="hctComponent26"onmouseover="voice(6)" class="text-content">
-                        iCulture Group
-                        <br> Tel: 080-688-7675
-                        <br> 0-2800-2308-14 ext. 3405
-                        <br>Public Relations office
-                        <br> 0-2800-2308-14 ext. 3447
+            <div class="container">
+                <div class="row no-gutters" style="width:70%; margin: auto;">
+                    <div class="col-sm" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="400"
+                        data-aos-anchor-placement="top">
+                        <ion-icon name="call" class="icon-item"></ion-icon>
                         <br>
-                </div>
-                <div class="col-sm" style="margin-bottom: 50px;" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500" data-aos-anchor-placement="top">
-                    <ion-icon name="mail" class="icon-item"></ion-icon>
-                    <br>
-                    <p id="hctComponent27"onmouseover="voice(7)" class="text-content">
-                        E-mail
-                        <br> rilca.mu@gmail.com
-                        <br> iculture408@gmail.com
+                        <p id="hctComponent26" onmouseover="voice(6)" class="text-content">
+                            iCulture Group
+                            <br> Tel: 080-688-7675
+                            <br> 0-2800-2308-14 ext. 3405
+                            <br>Public Relations office
+                            <br> 0-2800-2308-14 ext. 3447
+                            <br>
+                    </div>
+                    <div class="col-sm" style="margin-bottom: 50px;" data-aos="zoom-in" data-aos-duration="500"
+                        data-aos-delay="500" data-aos-anchor-placement="top">
+                        <ion-icon name="mail" class="icon-item"></ion-icon>
                         <br>
-                    </p>
+                        <p id="hctComponent27" onmouseover="voice(7)" class="text-content">
+                            E-mail
+                            <br> rilca.mu@gmail.com
+                            <br> iculture408@gmail.com
+                            <br>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
+            <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
                 <hr style="
                                 width: 20%;
                                 margin-bottom: 5%;
@@ -321,23 +334,25 @@
                                 margin-top: 5%;
                                 color: rgb(255, 255, 255);
                                 background-color: rgb(255, 255, 255);">
-                <img onmouseover="voice(9)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center" data-aos-duration="1300" src="assets/images/down.png"
-                    style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
+                <img onmouseover="voice(9)" data-aos="zoom-in-down" data-aos-anchor-placement="top-center"
+                    data-aos-duration="1300" src="assets/images/down.png" style="width: 6%; min-width: 70px; padding-top: 200px; filter:invert(100%);">
                 <br>
                 <br>
             </div>
             <div class="text-center-box" style="padding-top:200px " data-aos="zoom-out" data-aos-duration="1300">
-            <iframe onmouseover="voice(10)" width="80%" height="650px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d968.6991675850537!2d100.32302645649412!3d13.79112752237328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5965d47c998cc852!2z4Liq4LiW4Liy4Lia4Lix4LiZ4Lin4Li04LiI4Lix4Lii4Lig4Liy4Lip4Liy4LmB4Lil4Liw4Lin4Lix4LiS4LiZ4LiY4Lij4Lij4Lih4LmA4Lit4LmA4LiK4Li14Lii!5e0!3m2!1sth!2sth!4v1539011412320" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> 
-            <br><br><br><br><br><br><br><br><br>
-                </div>
+                <iframe onmouseover="voice(10)" width="80%" height="650px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d968.6991675850537!2d100.32302645649412!3d13.79112752237328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5965d47c998cc852!2z4Liq4LiW4Liy4Lia4Lix4LiZ4Lin4Li04LiI4Lix4Lii4Lig4Liy4Lip4Liy4LmB4Lil4Liw4Lin4Lix4LiS4LiZ4LiY4Lij4Lij4Lih4LmA4Lit4LmA4LiK4Li14Lii!5e0!3m2!1sth!2sth!4v1539011412320"
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
     </div>
     <script>
-    AOS.init();
-    if (localStorage.getItem('isvoice')) {
-      document.getElementById('toggleTTS').style.color = 'red'
-    }
-    else {
-      document.getElementById('toggleTTS').style.color = 'white'
-    }
+        AOS.init();
+        if (localStorage.getItem('isvoice')) {
+            document.getElementById('toggleTTS').style.color = 'red'
+        }
+        else {
+            document.getElementById('toggleTTS').style.color = 'white'
+        }
     </script>
 </body>
