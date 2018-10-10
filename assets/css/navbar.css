@@ -26,9 +26,10 @@
     text-align: center;
 }
 .bg-opacity{
-    background-color: rgb(61, 34, 0);
+    background-color: rgb(41, 24, 0);
     height: 70px;
     font-size: 12pt;
+    border-top: solid 8px rgb(88, 58, 0);
 }
 .nav-item{
     margin-left: 10px;
