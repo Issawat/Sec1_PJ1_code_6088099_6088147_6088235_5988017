@@ -19,31 +19,8 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+        <script src="assets/js/gallery.js"></script>
     </head>
-    <script>
-       $(document).ready(function () {
-                if(localStorage.getItem('ishct')){
-                    $("#toggleHCT").css('color','yellow')
-                    for(let i = 1 ; i <= 21 ; i++)
-                    $(`#hctComponent${i}`).addClass('hct')
-                }
-                $("#toggleHCT").click(function () {
-                    if(localStorage.getItem('ishct')){
-                    localStorage.setItem('ishct','')
-                    $("#toggleHCT").css('color','white')
-                    for(let i = 1 ; i <= 21 ; i++)
-                    $(`#hctComponent${i}`).removeClass('hct')
-                    }
-                    else {
-                        localStorage.setItem('ishct','true')
-                        for(let i = 1 ; i <= 21 ; i++)
-                        $(`#hctComponent${i}`).addClass('hct')
-                        $("#toggleHCT").css('color','yellow')
-                        
-                    }
-                });
-            });
-    </script>
     <body class="fade-effect">
             <div class="d-none d-lg-block" style="
             z-index:100;

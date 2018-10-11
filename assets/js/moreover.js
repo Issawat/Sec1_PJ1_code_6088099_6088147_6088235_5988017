@@ -2,33 +2,32 @@
 $(document).ready(function () {
     if (localStorage.getItem('ishct')) {
         $("#toggleHCT").css('color', 'yellow')
-        for (let i = 1; i <= 26; i++)
+        for (let i = 1; i <= 30; i++)
             $(`#hctComponent${i}`).addClass('hct')
     }
     $("#toggleHCT").click(function () {
         if (localStorage.getItem('ishct')) {
             localStorage.setItem('ishct', '')
             $("#toggleHCT").css('color', 'white')
-            for (let i = 1; i <= 26; i++)
+            for (let i = 1; i <= 30; i++)
                 $(`#hctComponent${i}`).removeClass('hct')
         }
         else {
             localStorage.setItem('ishct', 'true')
-            for (let i = 1; i <= 26; i++)
+            for (let i = 1; i <= 30; i++)
                 $(`#hctComponent${i}`).addClass('hct')
             $("#toggleHCT").css('color', 'yellow')
 
         }
     });
 });
-
 function voice(num) {
     if (localStorage.getItem('isvoice') == 'true') {
         if (num == 1) {
-            responsiveVoice.speak("Research Institute for Languages and Cultures of Asia, or RILCA, was firstly established in a name of Research Center for Languages and Cultures of Southeast Asia in 1974 to produce Linguistic academicians that are advantage in communicating with people on diversity race, languages and cultures. In 1981, was changed to Research Institute for Languages and Cultures for Rural Development and lastly became Research Institute for Languages and Cultures of Asia in 2009.");
+            responsiveVoice.speak("Know more about The History of The Museum.");
         }
         else if (num == 2) {
-            responsiveVoice.speak("The history of the museum");
+            responsiveVoice.speak("RILCA is not only doing a research, but also producing the graduate. RILCA has four languages and cultures postgraduate courses, there are Ph.D. and M.A. in Linguistics, Ph.D. in Multiculture Studies. RILCA also is to maintain the important traditions, it is to arrange many the activities. The Personnel of RILCA have been doing research about the Ethnic continuously for over 30 years and will definitely keep doing this for the benefits of humankind as the slogan Research and Developmental Institute for Languages, Cultures and Ethnic of Asia");
         }
         else if (num == 3) {
             responsiveVoice.speak("Scroll down for the details");

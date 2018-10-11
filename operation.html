@@ -20,85 +20,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+
     <!-- import local components-->
-    <script src="assets/js/history.js"></script>
     <link rel="stylesheet" href="assets/css/history.css" type="text/css">
+    <script src="assets/js/operation.js"></script>
 </head>
 
 <body class="fade-effect">
-        <script>
-        
-             $(document).ready(function () {
-                if(localStorage.getItem('ishct')){
-                    $("#toggleHCT").css('color','yellow')
-                    for(let i = 1 ; i <= 30 ; i++)
-                    $(`#hctComponent${i}`).addClass('hct')
-                }
-                $("#toggleHCT").click(function () {
-                    if(localStorage.getItem('ishct')){
-                    localStorage.setItem('ishct','')
-                    $("#toggleHCT").css('color','white')
-                    for(let i = 1 ; i <= 30; i++)
-                    $(`#hctComponent${i}`).removeClass('hct')
-                    }
-                    else {
-                        localStorage.setItem('ishct','true')
-                        for(let i = 1 ; i <= 30 ; i++)
-                        $(`#hctComponent${i}`).addClass('hct')
-                        $("#toggleHCT").css('color','yellow')
-                        
-                    }
-                });
-            });
-
-                function voice(num) {
-                  if (localStorage.getItem('isvoice') == 'true') {
-                    if (num == 1) {
-                      responsiveVoice.speak("Exhibition, The museum exhibits academic progression of the Institution. ");
-                    }
-                    else if (num == 2) {
-                      responsiveVoice.speak("Interactive conversation, The museum is making a discussion through ethnic traditional villagesscape.");
-                    }
-                    else if (num == 3) {
-                      responsiveVoice.speak("Practicum Arena, The museum is used as practicum arena for all museum people.");
-                    }
-                  }
-                }
-                function largeText() {
-                  document.getElementById('nav').classList.add('text-lg')
-                }
-                function setVoice() {
-                  if (localStorage.getItem('isvoice')) {
-                    localStorage.setItem('isvoice', '')
-                    document.getElementById('toggleTTS').style.color = 'white'
-                    var context = new AudioContext()
-                    var o = context.createOscillator()
-                    o.frequency.value = 350
-                    var g = context.createGain()
-                    o.connect(g)
-                    g.connect(context.destination)
-                    o.start(0)
-                    g.gain.exponentialRampToValueAtTime(
-                      0.00001, context.currentTime + 3
-                    )
-                    responsiveVoice.speak('text to speech off')
-                  }
-                  else {
-                    localStorage.setItem('isvoice', 'true')
-                    document.getElementById('toggleTTS').style.color = 'red'
-                    var context = new AudioContext()
-                    var o = context.createOscillator()
-                    var g = context.createGain()
-                    o.connect(g)
-                    g.connect(context.destination)
-                    o.start(0)
-                    g.gain.exponentialRampToValueAtTime(
-                      0.00001, context.currentTime + 3
-                    )
-                    responsiveVoice.speak('text to speech on. Operation of the museum.')
-                  }
-                }
-              </script>
+        <!--accessibility pane-->
         <div class="d-none d-lg-block" style="
         z-index:100;
         position: fixed; 
@@ -120,6 +49,8 @@
         <p style="font-size: 8pt">HCT</p>
       </div>
     </div>
+
+    <!-- mobile navbar component-->
     <div class="d-lg-none" style="z-index:300; border-bottom: solid 13px rgb(104, 57, 0); position: fixed; width: 100%; background-color: white; text-align: center;">
         <button style="display: inline" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#demo" aria-controls="demo"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -228,6 +159,8 @@
             </div>
         </div>
     </div>
+
+     <!-- initiate function state before all contents are loaded -->
     <script>
             AOS.init();
             if (localStorage.getItem('isvoice')) {

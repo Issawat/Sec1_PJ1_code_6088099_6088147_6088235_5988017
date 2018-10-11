@@ -1,20 +1,19 @@
-
 $(document).ready(function () {
     if (localStorage.getItem('ishct')) {
         $("#toggleHCT").css('color', 'yellow')
-        for (let i = 1; i <= 26; i++)
+        for (let i = 1; i <= 30; i++)
             $(`#hctComponent${i}`).addClass('hct')
     }
     $("#toggleHCT").click(function () {
         if (localStorage.getItem('ishct')) {
             localStorage.setItem('ishct', '')
             $("#toggleHCT").css('color', 'white')
-            for (let i = 1; i <= 26; i++)
+            for (let i = 1; i <= 30; i++)
                 $(`#hctComponent${i}`).removeClass('hct')
         }
         else {
             localStorage.setItem('ishct', 'true')
-            for (let i = 1; i <= 26; i++)
+            for (let i = 1; i <= 30; i++)
                 $(`#hctComponent${i}`).addClass('hct')
             $("#toggleHCT").css('color', 'yellow')
 
@@ -25,13 +24,34 @@ $(document).ready(function () {
 function voice(num) {
     if (localStorage.getItem('isvoice') == 'true') {
         if (num == 1) {
-            responsiveVoice.speak("Research Institute for Languages and Cultures of Asia, or RILCA, was firstly established in a name of Research Center for Languages and Cultures of Southeast Asia in 1974 to produce Linguistic academicians that are advantage in communicating with people on diversity race, languages and cultures. In 1981, was changed to Research Institute for Languages and Cultures for Rural Development and lastly became Research Institute for Languages and Cultures of Asia in 2009.");
+            responsiveVoice.speak("Museum Information");
         }
         else if (num == 2) {
-            responsiveVoice.speak("The history of the museum");
+            responsiveVoice.speak("General Information");
         }
         else if (num == 3) {
+            responsiveVoice.speak("Location, 1st Floor Research Institute for Languages and Cultures of Asia Mahidol University, Salaya Campus");
+        }
+        else if (num == 4) {
+            responsiveVoice.speak("Office Hours, Monday to Friday, from 8.30 a.m. to 4.30 p.m.");
+        }
+        else if (num == 5) {
+            responsiveVoice.speak("Museum Fee, Free for all");
+        }
+        else if (num == 6) {
+            responsiveVoice.speak("iCulture Group Tel: 080-688-7675 or 0-2800-2308-14 ext. 3 4 0 5. For Public Relations office tel: 0-2800-2308-14 ext. 3 4 4 7 ");
+        }
+        else if (num == 7) {
+            responsiveVoice.speak("E-mail r i l c a.mu@gmail.com or iculture408@gmail.com ");
+        }
+        else if (num == 8) {
+            responsiveVoice.speak("Museum Location");
+        }
+        else if (num == 9) {
             responsiveVoice.speak("Scroll down for the details");
+        }
+        else if (num == 10) {
+            responsiveVoice.speak("This is a Google maps");
         }
     }
 }
